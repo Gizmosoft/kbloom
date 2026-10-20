@@ -11,8 +11,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/kartikeyhebbar/kbloom/internal/bloom"
-	"github.com/kartikeyhebbar/kbloom/internal/server"
+	"github.com/Gizmosoft/kbloom/internal/bloom"
+	"github.com/Gizmosoft/kbloom/internal/server"
 )
 
 // startServer listens on a random port and stops the server when the test ends.

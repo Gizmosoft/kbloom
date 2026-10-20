@@ -34,3 +34,6 @@ go.work.sum
 
 # Personal files
 dev-docs/
+
+# build files
+/kbloom

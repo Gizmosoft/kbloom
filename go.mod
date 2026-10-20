@@ -1,3 +1,3 @@
-module github.com/kartikeyhebbar/kbloom
+module github.com/Gizmosoft/kbloom
 
 go 1.23

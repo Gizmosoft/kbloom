@@ -1,0 +1,14 @@
+.git
+.github
+kbloom
+*.exe
+*.test
+*.out
+coverage.*
+.env
+dev-docs
+.idea
+.vscode
+Dockerfile
+compose.yaml
+.dockerignore

@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kartikeyhebbar/kbloom/internal/bloom"
-	"github.com/kartikeyhebbar/kbloom/internal/resp"
+	"github.com/Gizmosoft/kbloom/internal/bloom"
+	"github.com/Gizmosoft/kbloom/internal/resp"
 )
 
 // session holds the small amount of per-connection Redis client state we honor

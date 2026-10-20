@@ -10,8 +10,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/kartikeyhebbar/kbloom/internal/bloom"
-	"github.com/kartikeyhebbar/kbloom/internal/resp"
+	"github.com/Gizmosoft/kbloom/internal/bloom"
+	"github.com/Gizmosoft/kbloom/internal/resp"
 )
 
 // Config controls connection limits and deadlines.

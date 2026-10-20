@@ -8,7 +8,7 @@ import (
 	"math"
 	"sync"
 
-	"github.com/kartikeyhebbar/kbloom/internal/murmur3"
+	"github.com/Gizmosoft/kbloom/internal/murmur3"
 )
 
 // maxHashes bounds the probe loop. Optimal k for a representable error rate

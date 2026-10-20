@@ -14,8 +14,8 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/kartikeyhebbar/kbloom/internal/bloom"
-	"github.com/kartikeyhebbar/kbloom/internal/server"
+	"github.com/Gizmosoft/kbloom/internal/bloom"
+	"github.com/Gizmosoft/kbloom/internal/server"
 )
 
 // config is the process configuration after flags and environment variables are merged.
@@ -30,21 +30,31 @@ type config struct {
 }
 
 // main loads configuration, serves until a signal, and exits non-zero on failure.
+// "kbloom health" probes the local server and is the container health check.
 func main() {
-	cfg, err := parseConfig(os.Args[1:])
+	args := os.Args[1:]
+	if len(args) > 0 && args[0] == "health" {
+		exitOn(runHealth(args[1:]))
+		return
+	}
+	cfg, err := parseConfig(args)
 	if err != nil {
-		// Flag errors are already printed. Exit with their code and do not print them again.
-		var ee exitError
-		if errors.As(err, &ee) {
-			os.Exit(ee.code)
-		}
-		fmt.Fprintf(os.Stderr, "kbloom: %v\n", err)
-		os.Exit(1)
+		exitOn(err)
 	}
-	if err := serve(cfg); err != nil {
-		fmt.Fprintf(os.Stderr, "kbloom: %v\n", err)
-		os.Exit(1)
+	exitOn(serve(cfg))
+}
+
+// exitOn prints err and exits. Flag-parse failures keep the code the flag package already used.
+func exitOn(err error) {
+	if err == nil {
+		return
 	}
+	var ee exitError
+	if errors.As(err, &ee) {
+		os.Exit(ee.code)
+	}
+	fmt.Fprintf(os.Stderr, "kbloom: %v\n", err)
+	os.Exit(1)
 }
 
 // exitError is a flag-parse failure whose message was already written to stderr.

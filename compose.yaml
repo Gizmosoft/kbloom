@@ -1,0 +1,21 @@
+services:
+  kbloom:
+    build:
+      context: .
+    image: kbloom:local
+    ports:
+      - "6380:6380"
+    environment:
+      KBLOOM_ADDR: ":6380"
+      KBLOOM_LOG_LEVEL: info
+      KBLOOM_MAX_BITS: "4294967296"
+      KBLOOM_MAX_MEMORY: "1073741824"
+      KBLOOM_MAX_CLIENTS: "10000"
+      KBLOOM_TIMEOUT: "0s"
+      KBLOOM_WRITE_TIMEOUT: "10s"
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
