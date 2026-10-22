@@ -37,3 +37,7 @@ dev-docs/
 
 # build files
 /kbloom
+
+
+# DockerHub README file
+README.DockerHub.md
