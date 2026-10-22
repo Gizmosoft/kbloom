@@ -2,6 +2,13 @@
 
 ![kbloom](kbloom%20banner.png)
 
+[![Release](https://img.shields.io/github/v/release/Gizmosoft/kbloom)](https://github.com/Gizmosoft/kbloom/releases)
+[![License: MIT](https://img.shields.io/github/license/Gizmosoft/kbloom)](https://github.com/Gizmosoft/kbloom/blob/main/LICENSE)
+[![Go](https://img.shields.io/github/go-mod/go-version/Gizmosoft/kbloom)](https://github.com/Gizmosoft/kbloom/blob/main/go.mod)
+[![Docker](https://img.shields.io/docker/v/gizmosoft/kbloom/latest?arch=arm64)](https://hub.docker.com/r/gizmosoft/kbloom)
+[![Docker pulls](https://img.shields.io/docker/pulls/gizmosoft/kbloom)](https://hub.docker.com/r/gizmosoft/kbloom)
+[![Image size](https://img.shields.io/docker/image-size/gizmosoft/kbloom/latest)](https://hub.docker.com/r/gizmosoft/kbloom)
+
 **kbloom** is a standalone, in-memory Bloom filter microservice. It speaks a Redis-compatible RESP2 subset over TCP, so any standard Redis client (`redis-cli`, redis-py, Jedis, ioredis, and others) can use it without a custom SDK.
 
 Default listen address: `:6380`. 
