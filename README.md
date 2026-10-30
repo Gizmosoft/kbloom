@@ -40,7 +40,7 @@ Errors are RESP error replies (`-ERR ...`), which Redis clients surface as excep
 
 ## Requirements
 
-- [Go](https://go.dev/dl/) 1.23 or newer (for local builds)
+- [Go](https://go.dev/dl/) 1.26.10 or newer (for local builds)
 - Optional: Docker / Docker Compose (for container runs)
 - Optional: `redis-cli` for manual testing
 

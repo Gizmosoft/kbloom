@@ -1,5 +1,5 @@
 # Build a static Linux binary, then copy it into a minimal image with no shell.
-FROM golang:1.23-bookworm AS build
+FROM golang:1.26.10-bookworm AS build
 
 WORKDIR /src
 
